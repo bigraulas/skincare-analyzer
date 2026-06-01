@@ -34,4 +34,8 @@ public class IngredientService {
     public void deleteById(Long id){
         ingredientRepository.deleteById(id);
     }
+
+    public Optional<Ingredient> findByNumeInci(String numeInci){
+        return ingredientRepository.findByNumeInci(numeInci);
+    }
 }

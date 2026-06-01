@@ -5,6 +5,7 @@ import ro.skincare.skincare_analyzer.model.Ingredient;
 import ro.skincare.skincare_analyzer.service.IngredientService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/ingrediente")
@@ -49,6 +50,13 @@ public class IngredientController {
     @DeleteMapping("/{id}")
     public void stergeIngredient(@PathVariable Long id) {
         ingredientService.deleteById(id);
+    }
+
+    @GetMapping("/nume/{nume}")
+    public Integer scorDeSiguranta(@PathVariable String nume)
+    {
+        Ingredient ingredient = ingredientService.findByNumeInci(nume).orElse(null);
+        return ingredient.getScorSiguranta();
     }
 
 
