@@ -14,13 +14,14 @@ function App() {
                 <Link to="/">Home</Link>
                 <Link to="/rutina">Rutina mea</Link>
             </nav>
+            <div className="container">
             <Routes>
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/produse/:id" element={<PaginaProdus/>}/>
                 <Route path="/rutina" element={<RutinaMea/>}/>
 
             </Routes>
-
+            </div>
 
         </BrowserRouter>);
 
